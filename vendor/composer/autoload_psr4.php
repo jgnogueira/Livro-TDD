@@ -9,4 +9,6 @@ return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'CDC\\Loja\\' => array($baseDir . '/src/CDC/Loja', $baseDir . '/tests/CDC/Loja'),
+    'CDC\\Exemplos\\' => array($baseDir . '/src/CDC/Exemplos', $baseDir . '/tests/CDC/Exemplos'),
 );
