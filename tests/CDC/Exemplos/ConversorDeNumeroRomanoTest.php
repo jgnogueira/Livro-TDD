@@ -55,4 +55,28 @@ class ConversorDeNumeroRomanoTest extends TestCase
 
         $this->assertEquals(24, $numeroRomanoConvertido);
     }
+
+    public function testDeveEntenderOSimboloCXLIV()
+    {
+        $conversor = new ConversorDeNumeroRomano();
+        $numeroRomanoConvertido = $conversor->converte('CXLIV');
+
+        $this->assertEquals(144, $numeroRomanoConvertido);
+    }
+
+    public function testDeveEntenderOSimboloCMXXXV()
+    {
+        $conversor = new ConversorDeNumeroRomano();
+        $numeroRomanoConvertido = $conversor->converte('CMXXXV');
+
+        $this->assertEquals(935, $numeroRomanoConvertido);
+    }
+
+    public function testDeveEntenderOSimboloMMM()
+    {
+        $conversor = new ConversorDeNumeroRomano();
+        $numeroRomanoConvertido = $conversor->converte('MMM');
+
+        $this->assertEquals(3000, $numeroRomanoConvertido);
+    }
 }
