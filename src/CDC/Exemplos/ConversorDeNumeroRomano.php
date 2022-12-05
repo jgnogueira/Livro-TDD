@@ -33,7 +33,7 @@ class ConversorDeNumeroRomano
                 $multiplicador = -1;
             }
 
-            $resultado = $resultado + ($this->tabela[$numeroCorrente] * $multiplicador);
+            $resultado = $resultado + ($atual * $multiplicador);
             $ultimoNumeroDaDireita = $atual;
         }
 
