@@ -17,24 +17,23 @@ class ConversorDeNumeroRomano
     public function converte($numeroRomano)
     {
         $resultado = 0;
+        $numeroRomano = str_split($numeroRomano);
         $ultimoNumeroDaDireita = 0;
 
-        for ($i = strlen($numeroRomano) - 1; $i >= 0; $i--) {
-            $atual = 0;
-            $numeroCorrente = $numeroRomano[$i];
+        for ($i = count($numeroRomano) - 1; $i >= 0; $i--) {
+            $numeroAtual = 0;
 
-            if (array_key_exists($numeroCorrente, $this->tabela)) {
-                $atual = $this->tabela[$numeroCorrente];
+            if (array_key_exists($numeroRomano[$i], $this->tabela)) {
+                $numeroAtual = $this->tabela[$numeroRomano[$i]];
             }
 
-            $multiplicador = 1;
-
-            if ($atual < $ultimoNumeroDaDireita) {
-                $multiplicador = -1;
+            if ($numeroAtual < $ultimoNumeroDaDireita) {
+                $resultado = $resultado - $numeroAtual;
+            } else {
+                $resultado = $resultado + $numeroAtual;
             }
 
-            $resultado = $resultado + ($atual * $multiplicador);
-            $ultimoNumeroDaDireita = $atual;
+            $ultimoNumeroDaDireita = $numeroAtual;
         }
 
         return $resultado;
