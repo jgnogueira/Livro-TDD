@@ -6,6 +6,10 @@ docker build -t php-apache:1.0 .
 
 docker run -d --name livrotdd --mount type=bind,source="$(pwd)",target=/var/www/html php-apache:1.0
 
+### Instalando dependências
+
+docker exec -it livrotdd composer install
+
 ### Executando testes
 
-./vendor/bin/phpunit --colors tests
+docker exec -it livrotdd ./vendor/bin/phpunit --colors tests
